@@ -1,5 +1,7 @@
 # Array init(repeating:count:)
 
+> 곱셈
+
 ```swift
 import Foundation
 
