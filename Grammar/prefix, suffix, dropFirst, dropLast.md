@@ -1,4 +1,4 @@
-# prefix, suffix, dropFirst, dropLast
+# prefix(), suffix(), dropFirst(), dropLast()
 
 접두사, 접미사
 
