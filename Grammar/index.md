@@ -2,7 +2,7 @@
 import Foundation
 
 let a = "abcdef"
-let b = a[a.index(a.startIndex, offsetBy: 3)]	// "d"
+let b = a[a.index(a.startIndex, offsetBy: 3)]	// "d" 시작 지점부터 떨어진 정수 값만큼을 더한 위치를 반환
 // b의 타입은 String이 아닌 Character
 
 // 배열과 문자열의 인덱스 접근법 비교
