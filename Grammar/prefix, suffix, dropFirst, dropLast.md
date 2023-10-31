@@ -12,3 +12,5 @@ let a4 = a.dropLast(3)        // "abc"
 // 범위를 넘어간다면 알아서 조절
 let a5 = a.prefix(100)        // "abc"
 ``` 
+
+이 메서드들은 Array 에도 똑같이 적용된다.
