@@ -1,4 +1,4 @@
-# (미완)Higher order function(map, filter, reduce)
+# (미완Higher order function(map, filter, reduce)
 
 > 고차함수를 완전히 이해할때까지 친절하게 적어보자.
 
