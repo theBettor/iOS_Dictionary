@@ -4,7 +4,7 @@
 
 고차함수는 다른 함수를 전달인자로 받거나 함수실행의 결과를 함수로 반환하는 함수
 
-1. Map(변형) : 코드 간결성, 재사용 용이, 컴파일러 최적화 성능 좋음
+1. Map(변형) : 기존 데이터를 변형하여 새로운 컨테이너를 만드는데, 기존 데이터는 변형되지 않습니다. [코드 간결성, 재사용 용이, 컴파일러 최적화 성능 좋음]
 ```swift
 array.map(transform: T throws -> T) //  T타입의 transform을 받아 새로운 T타입의 컨테이너를 생성
 ```
@@ -37,3 +37,42 @@ let multiArray = numArray.map({ (number: Int) -> Int in
 })
 print(multiArray)  // [2, 6, 10, 14, 18]
 ```
+<br>
+
+2. Filter(데이터 추출) : 기존 컨테이너에서 내부의 값을 걸러 새로운 컨테이너를 만듭니다.
+
+```swift
+array.filter(isIncluded: T throws -> T) // T타입의 isIncluded를 받아 새로운 T형태의 컨테이너를 생성
+```
+<br>
+
+for - in
+```swift
+let stringArray = ["제발", "취업", "시켜주세요", "어디든", "열심히", "기한", "지킬게요"]
+var threeCountArray = [String]()
+for st in stringArray {
+    if st.count == 3 {
+        threeCountArray.append(st)
+    }
+}
+print(threeCountArray) // ["어디든", "열심히"]
+```
+<br>
+
+filter(매개변수, 반환 타입, 반환 키워드(return)를 생략한 후행 클로저)
+```swift
+let stringAttay = ["제발", "취업", "시켜주세요", "어디든", "열심히", "기한", "지킬게요"]
+let threeCountArray = stringAttay.filter { $0.count == 3 }
+print(threeCountArray) // ["어디든", "열심히"]
+```
+<br>
+
+filter
+```swift
+let stringArray = ["제발", "취업", "시켜주세요", "어디든", "열심히", "기한", "지킬게요"]
+let threeCountArray = stringArray.filter({ (value: String) -> Bool in
+    return value.count == 3
+})
+print(threeCountArray) // ["어디든", "열심히"]
+```
+
