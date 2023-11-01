@@ -21,7 +21,7 @@ print(multiArray)  // [2, 6, 10, 14, 18]
 ```
 <br>
 
-map
+map(매개변수, 반환 타입, 반환 키워드(return)를 생략(축약)한 후행 클로저))
 ```swift
 let numArray = [1,3,5,7,9]
 let multiArray = numArray.map { $0 * 2 }
@@ -29,7 +29,7 @@ print(multiArray)  // [2, 6, 10, 14, 18]
 ```
 <br>
 
-map(매개변수, 반환 타입, 반환 키워드(return)를 생략(축약)한 후행 클로저))
+map
 ```swift
 let numArray = [1,3,5,7,9]
 let multiArray = numArray.map({ (number: Int) -> Int in
