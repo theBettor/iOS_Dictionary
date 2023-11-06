@@ -19,4 +19,56 @@
     - 축약된 전달인자 이름을 사용할 수 있습니다.
     - 후행 클로저 문법을 사용할 수 있습니다.
 
-1. 기본 클로저
+## 1. 기본 클로저
+```swift
+func sorted(by areInIncreasingOrder: (Self.Element, Self.Element) throws -> Bool) rethrows -> [Self.Element]
+```
+> sorted(by)는 내림차순으로 (배열의 타입과 같은 두 개의 매개변수를 가지며 Bool타입을 반환하는) 클로저를 전달인자로 받을 수 있다. 반환하는 Bool 값은 첫 번째 전달인자 값이 새로 생성되는 배열에서 두 번째 전달인자 값보다 먼저 배치되어야 하는지에 대한 결과값이다. true를 반환하면 첫 번째 전달인자가 두 번째 전달인자보다 앞에 온다.
+
+```swift
+func backwards(first: String, second: String) -> Bool {
+    print("\(first) \(second) 비교중~")
+    return first > second
+}
+
+let names: [String] = ["Bettor", "Chris", "Elly", "Justin"]
+let reversed: [String] = names.sorted(by: backwards)
+print(reversed)
+```
+<br>
+전달받는 두 전달인자는 정렬에 참고할 값이고, 반환될 값은 첫 번째 전달인자가 앞으로 배치될지 뒤로 배치될지에 대한 Bool 타입 값이다.
+<br>
+
+
+```swift
+Chris Bettor 비교중 // 2와 1 비교중, 1이 더 앞으로
+Elly Bettor 비교중 // 1이 된 Bettor와 2인 Elly, 또 Bettor가 앞이라 Elly와 Chris의 결전
+Elly Chris 비교중 // 2와 3인 그들이 1과 2가 되어 대결, Chris 승, Elly 패
+Justin Bettor 비교중 // 1등 Bettor와 나머지 Justin의 대결, Bettor 1등 확정
+Justin Chris 비교중 // 나머지 순위 결정전, 배열에서 Bettor빼고 앞에 있는 Chris와 대결, Chris 승 
+Justin Elly 비교중 // 3번 다 이긴 Bettor, 2번 이긴 Chris, 꼴지 대전, Elly 승, Justin 패
+["Justin", "Elly", "Chris", "Bettor"] // 이제 sorted(by)해서 reversed 되면 이렇게 되겠지?
+
+```
+> 비교 순서가 왜 저렇게 되는지 심각하게 고민하면서 논리를 주석을 적어보았다. 나름 이해했는데 100퍼센트는 아닌듯 좀 더 익숙해져야...
+<br>
+
+이거보다 더 간결하게 표현 할 수 있단다!
+
+{(매개변수들) -> 반환 타입 in
+    실행 코드
+}
+
+함수와 마찬가지로 입출력 매개변수를 사용하고, 매개변수 이름을 지정하면 가변 매개변수로도 사용 가능하다.
+
+```swift
+let names: [String] = ["Bettor", "Chris", "Elly", "Justin"]
+let reversed: [String] = names.sorted(by: {(first: String, second: String) -> Bool in
+    return first > second
+})
+
+print(reversed)
+```
+> sorted(by)안에 위의 backwards 함수를 녹여서 간결해지고 직관적으로 바뀌었다. 이런 장점도 있지만 다른 코드에도 같은 기능을 사용하려면 위처럼 따로 함수로 구현해 두는것도 나쁘지 않겠다!
+
+## 2. 후행 클로저
