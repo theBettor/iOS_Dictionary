@@ -219,9 +219,49 @@ for i in 0...3 {
 조금 더 내 식으로 이야기하자면 위의 설명처럼
 guard는 한 구문에서 바로 예외처리해야하지만 if 구문은 따로 추가해야하기때문에 예외처리에 유리한 방법인거같다?라는 생각.
 
-guard let 구문을 ~부터~
+- guard let 구문을 활용한 옵셔널 바인딩
+if let, guard let을 활용한 옵셔널 바인딩
+
+```swift
+let value_1: Int? = nil
+let value_2: Int? = 2
+
+// if let 구문을 활용한 옵셔널 바인딩
+func PrintValue_if(_ v: Int?) {
+    if let tmp = v {
+        print(tmp, "입니다.")
+    }
+    else {
+        print("nil 입니다.")
+    }
+}
+
+// guard let 구문을 활용한 옵셔널 바인딩
+func PrintValue_guard(_ v: Int?) {
+    guard let tmp_g = v else {
+        print("nil 입니다.")
+        return
+    }
+
+    print(tmp_g, "입니다.")
+}
+
+PrintValue_if(value_1)
+PrintValue_if(value_2)
+// nil 입니다.
+// 2 입니다.
+
+PrintValue_guard(value_1)
+PrintValue_guard(value_2)
+// nil 입니다.
+// 2 입니다.
 
 
+// guard let 구문은 nil에 해당하는 예외만을 바로 처리함으로써 if let 구문을 사용했을때보다 깔끔하게 표현이 가능하다!!!
+```
+
+정리
+guard는 예외 처리용 조건문, 상황에 따라 잘 사용하면 직관적이고 깔끔하게 코드 작성이 가능
 
 
 
