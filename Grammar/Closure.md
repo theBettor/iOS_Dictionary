@@ -73,4 +73,35 @@ print(reversed)
 ```
 > sorted(by)안에 위의 backwards 함수를 녹여서 간결해지고 직관적으로 바뀌었다. 이런 장점도 있지만 다른 코드에도 같은 기능을 사용하려면 위처럼 따로 함수로 구현해 두는것도 나쁘지 않겠다!
 
-## 2. 후행 클로저
+## 2. 후행 클로저<br>
+보다 조금 더 클로저를 읽기 쉽게 바꿀 수 있다. 함수나 메서드의 마지막 전달인자로 위치하는 클로저는 함수나 메서드의 소괄호를 닫은 후 작성해도 된다. 클로저가 조금 길어지거나 가독성이 조금 떨어진다 싶으면 후행 클로저 기능을 사용하면 좋다.
+
+단, 후행 클로저는 맨 마지막 전달인자로 전달되는 클로저에만 해당되므로 전달인자로 클로저 여러개를 전달할때는 맨 마지막 클로저만 후행 클로저로 사용할 수 있다. 또한 sorted(by: )메서드 처럼 단 하나의 클로저만 전달인자로 전달하는 경우에는 소괄호를 생략해줄 수 잇다.
+
+또 매개변수에 클로저가 여러개 있는 경우, 다중 후행 클로저 문법을 사용할 수 있다. 다중 후행 클로저를 사용하는 경우, 중괄호를 열고 닫음으로써 클로저를 표현하며, 첫 번째 클로저의 전달인자 레이블은 생략한다.
+
+```swift
+let names: [String] = ["Bettor", "Peter", "Chris" "Tom"]
+
+// 후행 클로저의 사용
+let reversed: [String] = names.sorted() { (first: String. second: String) -> Bool in return first > second 
+}
+
+// sorted(by: ) 메서드의 소괄호까지 생략 가능
+let reversed: [String] = names.sorted { (first: String, second: String) -> Bool in return first > second
+}
+
+func doSomething(do: (String) -> Void, onSuccess: (Any) -> Void, onFailure: (Error) -> Void) {
+// do something
+}
+
+doSomething { (someString: String) in
+// do closure
+} onSuccess: { (result: Any) in
+// succcess closure
+} onFailure: { (error: Error) in
+// failure closure
+}
+
+print(reversed)
+```
