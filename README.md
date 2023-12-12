@@ -10,4 +10,4 @@
 * [for.md](https://github.com/theBettor/iOS_Dictionary/blob/main/Grammar/for.md)
 <br>
 
-## [Algorithms & Data Structure](https://github.com/theBettor/iOS_Dictionary/tree/main/Algorithms)
+## [Algorithms & Data Structure](https://github.com/theBettor/iOS_Dictionary/tree/main/Algorithms%20%26%20Data%20Structure%20)
