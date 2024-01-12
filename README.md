@@ -12,6 +12,6 @@
 * [for.md](https://github.com/theBettor/iOS_Dictionary/blob/main/Grammar/for.md)
 <br>
 
-## [Tips]()
+## [Tips](https://github.com/theBettor/iOS_Dictionary/tree/main/Tips)
 > 모른다고 크게 문제가 되진 않지만, 자잘하게 필요한 것들
 
