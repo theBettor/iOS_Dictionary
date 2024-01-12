@@ -6,8 +6,12 @@
 
 > ETC<br>https://ingu627.github.io/md/markdown_grammar/ : 마크다운 문법
 
+## [Algorithms & Data Structure](https://github.com/theBettor/iOS_Dictionary/tree/main/Algorithms%20%26%20Data%20Structure%20)
+
 ## [Grammar](https://github.com/theBettor/iOS_Dictionary/tree/main/Grammar)
 * [for.md](https://github.com/theBettor/iOS_Dictionary/blob/main/Grammar/for.md)
 <br>
 
-## [Algorithms & Data Structure](https://github.com/theBettor/iOS_Dictionary/tree/main/Algorithms%20%26%20Data%20Structure%20)
+## [Tips]()
+> 모른다고 크게 문제가 되진 않지만, 자잘하게 필요한 것들
+
