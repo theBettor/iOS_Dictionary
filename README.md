@@ -5,6 +5,7 @@
 > https://bbiguduk.gitbook.io/swift/
 
 > ETC<br>https://ingu627.github.io/md/markdown_grammar/ : 마크다운 문법
+> https://takeheed.tistory.com/9 : 노션 단축키
 
 ## [Algorithms & Data Structure](https://github.com/theBettor/iOS_Dictionary/tree/main/Algorithms%20%26%20Data%20Structure%20)
 
